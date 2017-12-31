@@ -16,12 +16,25 @@
 
 	<dependencies>
 
+		<!-- Link Backend Project -->
+		<dependency>
+			<groupId>com.tdg</groupId>
+			<artifactId>tdgbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- JAVAEE API Dependency -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>${javaee.version}</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 
 		<!-- JUNIT Dependency -->
