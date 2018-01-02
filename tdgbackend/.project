@@ -3,6 +3,7 @@
 	<name>tdgbackend</name>
 	<comment></comment>
 	<projects>
+		<project>trekdiveglide</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

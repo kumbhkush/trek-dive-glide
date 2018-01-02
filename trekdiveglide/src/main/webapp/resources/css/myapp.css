@@ -30,9 +30,15 @@ body {
 	padding-bottom: 60px;
 }
 
+
+
 .footer{
 	
 	position: absolute;
 	bottom: 0;
 	height: 60px;
+}
+
+.active {
+    background-color: #4CAF50;
 }
