@@ -19,11 +19,12 @@ public class CategoryDAOImpl implements CategoryDAO {
 	private SessionFactory sessionFactory;
 
 	@Override
+	@SuppressWarnings(value = { "unchecked", "rawtypes" })
 	public List<Category> list() {
 
 		String selectActiveCategory = "FROM Category WHERE active = :active";
 
-		Query<Category> query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
+		Query query = sessionFactory.getCurrentSession().createQuery(selectActiveCategory);
 
 		query.setParameter("active", true);
 

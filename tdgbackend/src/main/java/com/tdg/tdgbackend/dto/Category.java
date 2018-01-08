@@ -49,15 +49,15 @@ public class Category {
 		this.active = active;
 	}
 
+	/*
+	 * Private Fields
+	 */
+
 	@Override
 	public String toString() {
 		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
 				+ ", active=" + active + "]";
 	}
-
-	/*
-	 * Private Fields
-	 */
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

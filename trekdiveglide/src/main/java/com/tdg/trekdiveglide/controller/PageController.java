@@ -1,6 +1,7 @@
 package com.tdg.trekdiveglide.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import com.tdg.tdgbackend.dao.CategoryDAO;
 import com.tdg.tdgbackend.dto.Category;
 
 @Controller
+@Component
 public class PageController {
 
 	@Autowired
@@ -17,20 +19,19 @@ public class PageController {
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
-
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Home");
-
-		// passing the list of categories
-		mv.addObject("categories", categoryDAO.list());
-
 		mv.addObject("userClickHome", true);
 		return mv;
 	}
 
+	/*
+	 * @RequestMapping({"/","/home","/index"}) public String sayHome() { return
+	 * "home";
+	 */
+
 	@RequestMapping(value = "/about")
 	public ModelAndView about() {
-
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "About Us");
 		mv.addObject("userClickAbout", true);
@@ -39,7 +40,6 @@ public class PageController {
 
 	@RequestMapping(value = "/contact")
 	public ModelAndView contact() {
-
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Contact Us");
 		mv.addObject("userClickContact", true);
@@ -53,7 +53,6 @@ public class PageController {
 
 	@RequestMapping(value = "/show/all/products")
 	public ModelAndView showAllProducts() {
-
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "All Products");
 
@@ -72,7 +71,7 @@ public class PageController {
 		// categoryDAO to fetch a single category
 		Category category = null;
 		category = categoryDAO.get(id);
-		
+
 		mv.addObject("title", category.getName());
 
 		// passing the list of categories
